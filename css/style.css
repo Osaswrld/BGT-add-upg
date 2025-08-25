@@ -1,0 +1,562 @@
+/* Global Styles and Base Typography */
+body {
+    /* Modern font stack with fallbacks for consistent typography */
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    /* Diagonal gradient background from light blue-gray to darker blue-gray */
+    background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+    /* Dark blue text color for good contrast */
+    color: #1a2e44;
+    /* Improved line spacing for better readability */
+    line-height: 1.6;
+    /* Prevent horizontal scrollbar on smaller screens */
+    overflow-x: hidden;
+}
+
+/* Header Section Styles */
+.header {
+    /* Full width header spanning entire viewport */
+    width: 100%;
+    /* Background image for visual appeal */
+    background-image: url("../img/glowing-contact-us-image.png");
+    /* Cover entire header area while maintaining aspect ratio */
+    background-size: cover;
+    /* Center the background image */
+    background-position: center;
+    /* Prevent background image repetition */
+    background-repeat: no-repeat;
+    /* Center align text content */
+    text-align: center;
+    /* Fixed height for consistent layout */
+    height: 250px;
+    /* Relative positioning for overlay pseudo-element */
+    position: relative;
+}
+
+/* Header Text Styling */
+.header h5 {
+    /* White text for contrast against dark background */
+    color: white;
+    /* Center alignment */
+    text-align: center;
+    /* Vertical positioning within header */
+    padding-top: 100px;
+    /* Remove default margin */
+    margin: 0;
+    /* Positioned above the overlay */
+    position: relative;
+    z-index: 1;
+}
+
+/* Header Link Styling */
+.header h5 a {
+    /* Inherit white color from parent */
+    color: white;
+    /* Remove default underline */
+    text-decoration: none;
+}
+
+/* Header Link Hover Effect */
+.header h5 a:hover {
+    /* Light blue color on hover for interactivity */
+    color: #60a5fa;
+}
+
+/* Header Overlay for Better Text Readability */
+.header::before {
+    /* Empty content for pseudo-element */
+    content: '';
+    /* Absolute positioning to cover entire header */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Semi-transparent black overlay */
+    background: rgba(0, 0, 0, 0.3);
+    /* Place behind text content */
+    z-index: 0;
+}
+
+/* Main Contact Section Styling */
+.contact-section {
+    /* Light gradient background for subtle depth */
+    background: linear-gradient(135deg, #ffffff, #f9fafb);
+    /* Rounded corners for modern appearance */
+    border-radius: 15px;
+    /* Soft shadow for elevation effect */
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+    /* Generous padding for content spacing */
+    padding: 60px 0;
+    /* Subtle breathing animation */
+    animation: sectionFade 5s infinite alternate;
+}
+
+/* Subtle fade animation for contact section */
+@keyframes sectionFade {
+    0% { opacity: 0.9; }
+    100% { opacity: 1; }
+}
+
+/* Introduction Text Styling */
+.intro-text {
+    /* Center alignment for introduction content */
+    text-align: center;
+    /* Large bottom margin for section separation */
+    margin-bottom: 5rem;
+}
+
+/* Main Heading Styling */
+.intro-text h2 {
+    /* Large, prominent text size */
+    font-size: 2.5rem;
+    /* Bold weight for emphasis */
+    font-weight: 700;
+    /* Professional blue color */
+    color: #1e3a8a;
+    /* Space below heading */
+    margin-bottom: 1.2rem;
+    /* Uppercase for impact */
+    text-transform: uppercase;
+    /* Letter spacing for readability */
+    letter-spacing: 1px;
+    /* Subtle scaling animation */
+    animation: textPulse 2s infinite alternate;
+}
+
+/* Pulsing animation for main heading */
+@keyframes textPulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.05); }
+}
+
+/* Introduction Paragraph Styling */
+.intro-text p {
+    /* Readable text size */
+    font-size: 1.2rem;
+    /* Muted text color */
+    color: #475569;
+    /* Constrained width for optimal reading */
+    max-width: 650px;
+    /* Center alignment */
+    margin: 0 auto;
+    /* Subtle fade animation */
+    animation: textFade 3s infinite alternate;
+}
+
+/* Fade animation for introduction text */
+@keyframes textFade {
+    0% { opacity: 0.8; }
+    100% { opacity: 1; }
+}
+
+/* Contact Form Container Styling */
+.contact-form {
+    /* Background image for visual interest */
+    background: url('img/call-center-representative.png') no-repeat center center;
+    /* Cover background while maintaining aspect ratio */
+    background-size: cover;
+    /* Rounded corners for consistency */
+    border-radius: 15px;
+    /* Adequate padding for form elements */
+    padding: 20px;
+    /* Subtle shadow for depth */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* Relative positioning for overlay */
+    position: relative;
+    /* Bottom margin for section separation */
+    margin-bottom: 2rem;
+}
+
+/* Form Background Overlay */
+.contact-form::before {
+    /* Empty content for pseudo-element */
+    content: '';
+    /* Cover entire form area */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Light overlay for form readability */
+    background: rgba(255, 255, 255, 0.2);
+    /* Place behind form elements */
+    z-index: 0;
+}
+
+/* Form Input and Select Styling */
+.contact-form .form-control,
+.contact-form .form-select {
+    /* Rounded input corners */
+    border-radius: 10px;
+    /* Light blue border */
+    border: 2px solid #e0e7ff;
+    /* Comfortable padding for text input */
+    padding: 12px;
+    /* Standard readable font size */
+    font-size: 1rem;
+    /* Smooth transition for interactions */
+    transition: all 0.4s ease;
+    /* Semi-transparent white background */
+    background: rgba(255, 255, 255, 0.95);
+    /* Subtle inset shadow for depth */
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    /* Ensure inputs fill container width */
+    width: 100%;
+}
+
+/* Form Input Focus States */
+.contact-form .form-control:focus,
+.contact-form .form-select:focus {
+    /* Blue border when focused */
+    border-color: #3b82f6;
+    /* Blue glow effect around focused input */
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    /* Slight upward movement on focus */
+    transform: translateY(-2px);
+}
+
+/* Form Label Styling */
+.contact-form .form-label {
+    /* Bold labels for clarity */
+    font-weight: 600;
+    /* Professional blue color */
+    color: #1e3a8a;
+    /* Subtle blinking animation */
+    animation: labelBlink 4s infinite alternate;
+}
+
+/* Label animation for visual interest */
+@keyframes labelBlink {
+    0% { opacity: 0.9; }
+    100% { opacity: 1; }
+}
+
+/* Primary Button Styling */
+.contact-form .btn-primary {
+    /* Blue gradient background */
+    background: linear-gradient(45deg, #3b82f6, #1e40af);
+    /* Remove default border */
+    border: none;
+    /* Comfortable button padding */
+    padding: 12px 24px;
+    /* Readable button text size */
+    font-size: 1.1rem;
+    /* Rounded button corners */
+    border-radius: 10px;
+    /* Smooth transition effects */
+    transition: all 0.4s ease;
+    /* Blue shadow for depth */
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+    /* Full width button on mobile */
+    width: 100%;
+}
+
+/* Button Hover Effects */
+.contact-form .btn-primary:hover {
+    /* Reversed gradient on hover */
+    background: linear-gradient(45deg, #1e40af, #3b82f6);
+    /* Lift effect on hover */
+    transform: translateY(-3px);
+    /* Enhanced shadow on hover */
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
+}
+
+/* Button Width Override for Desktop */
+.btn-primary {
+    width: 265px;
+}
+
+/* Contact Information Panel Styling */
+.contact-info {
+    /* Light gray background */
+    background: #f0f4f8;
+    /* Rounded corners for consistency */
+    border-radius: 15px;
+    /* Internal padding */
+    padding: 20px;
+    /* Subtle shadow for depth */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* Relative positioning for child elements */
+    position: relative;
+}
+
+/* Contact Info Headings */
+.contact-info h4 {
+    /* Medium heading size */
+    font-size: 1.3rem;
+    /* Bold weight for emphasis */
+    font-weight: 700;
+    /* Professional blue color */
+    color: #1e3a8a;
+    /* Bottom margin for spacing */
+    margin-bottom: 1.2rem;
+    /* Relative positioning for pseudo-element */
+    position: relative;
+}
+
+/* Animated Underline for Contact Info Headings */
+.contact-info h4::after {
+    /* Empty content for underline */
+    content: '';
+    /* Positioned at bottom of heading */
+    position: absolute;
+    /* Start with no width */
+    width: 0;
+    /* Thin underline */
+    height: 3px;
+    /* Position below text */
+    bottom: -5px;
+    left: 0;
+    /* Blue underline color */
+    background: #3b82f6;
+    /* Smooth width transition */
+    transition: width 0.3s ease;
+}
+
+/* Expand underline on hover */
+.contact-info h4:hover::after {
+    /* Full width underline on hover */
+    width: 100%;
+}
+
+/* Contact Info Paragraph Styling */
+.contact-info p {
+    /* Comfortable reading size */
+    font-size: 1.1rem;
+    /* Muted text color */
+    color: #475569;
+    /* Bottom margin for spacing */
+    margin-bottom: 1.5rem;
+    /* Smooth color transition */
+    transition: color 0.3s ease;
+}
+
+/* Contact Info Paragraph Hover Effect */
+.contact-info p:hover {
+    /* Blue color on hover */
+    color: #3b82f6;
+}
+
+/* Contact Detail Container */
+.contact-info .contact-detail {
+    /* Bottom margin for separation */
+    margin-bottom: 1rem;
+    /* Vertical padding for click area */
+    padding: 5px 0;
+}
+
+/* Social Media Links Styling */
+.social-links a {
+    /* Muted icon color */
+    color: #64748b;
+    /* Larger icon size */
+    font-size: 1.6rem;
+    /* Smooth transition for all properties */
+    transition: all 0.3s ease;
+    /* Continuous rotation animation */
+    animation: socialSpin 4s infinite linear;
+}
+
+/* Spinning animation for social icons */
+@keyframes socialSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Social Link Hover Effects */
+.social-links a:hover {
+    /* Blue color on hover */
+    color: #3b82f6;
+    /* Scale up slightly on hover */
+    transform: scale(1.2);
+}
+
+/* Form Help Text Styling */
+.form-text {
+    /* Standard text size */
+    font-size: 1rem;
+    /* Muted text color */
+    color: #64748b;
+    /* Subtle glow animation */
+    animation: textGlow 3s infinite alternate;
+}
+
+/* Glow animation for form text */
+@keyframes textGlow {
+    0% { text-shadow: none; }
+    100% { text-shadow: 0 0 5px rgba(100, 116, 139, 0.5); }
+}
+
+/* Success Icon Color */
+.form-text .fa-check-circle {
+    /* Green color for success states */
+    color: #22c55e;
+}
+
+/* Warning Icon Color */
+.form-text .fa-exclamation-triangle {
+    /* Red color for warning states */
+    color: #ef4444;
+}
+
+/* Tablet and Small Desktop Responsive Styles */
+@media (max-width: 767.98px) {
+    /* Reduce contact section padding on tablets */
+    .contact-section {
+        padding: 40px 0;
+    }
+
+    /* Smaller header height on tablets */
+    .header {
+        height: 150px;
+    }
+
+    /* Adjust header text positioning */
+    .header h5 {
+        padding-top: 50px;
+    }
+
+    /* Smaller main heading on tablets */
+    .intro-text h2 {
+        font-size: 2rem;
+    }
+
+    /* Reduced form padding on tablets */
+    .contact-form {
+        padding: 15px;
+    }
+
+    /* Smaller input padding and font size */
+    .contact-form .form-control,
+    .contact-form .form-select {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    /* Adjusted button styling for tablets */
+    .contact-form .btn-primary {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    /* Reduced contact info padding */
+    .contact-info {
+        padding: 15px;
+    }
+
+    /* Smaller heading size for contact info */
+    .contact-info h4 {
+        font-size: 1.1rem;
+    }
+
+    /* Smaller paragraph text */
+    .contact-info p {
+        font-size: 1rem;
+    }
+}
+
+/* Mobile Phone Responsive Styles */
+@media (max-width: 575.98px) {
+    /* Stack columns vertically on mobile */
+    .row {
+        flex-direction: column;
+    }
+
+    /* Ensure full width on mobile */
+    .contact-form,
+    .contact-info {
+        width: 100% !important;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Even smaller text on mobile */
+    .contact-form .form-control,
+    .contact-form .form-select {
+        font-size: 0.85rem;
+    }
+
+    /* Smaller button text on mobile */
+    .contact-form .btn-primary {
+        font-size: 0.9rem;
+    }
+}
+
+/* Map Iframe Styling */
+iframe {
+    /* Rounded corners for maps */
+    border-radius: 1.5em;
+    /* Large border (may be unintended) */
+    border: 200px;
+    /* Internal padding */
+    padding: 16px;
+    /* Remove top padding */
+    padding-top: 0px;
+    /* Remove horizontal margins */
+    margin-right: 0px;
+    margin-left: 0px;
+    /* Fixed width in centimeters */
+    width: 30cm;
+    /* Fixed height in centimeters */
+    height: 10cm;
+    /* Transition property (incomplete) */
+    transition: scale(1.1);
+}
+
+/* Map Hover Effect */
+iframe:hover {
+    /* Scale up map on hover */
+    transform: scale(1.1);
+    /* Full opacity on hover */
+    opacity: 1;
+}
+
+/* Highlight Text Color */
+.highlight {
+    /* Gold color for emphasized text */
+    color: gold;
+}
+
+/* Location Map Container Styling */
+.location-map-container {
+    /* Black background for contrast */
+    background-color: black;
+    /* White text color */
+    color: white;
+    /* Center align text */
+    text-align: center;
+    /* Internal padding */
+    padding: 1.5rem;
+    /* Rounded corners */
+    border-radius: 0.25rem;
+    /* Top margin for separation */
+    margin-top: 2rem;
+}
+
+/* Location Container Text Colors */
+.location-map-container h4,
+.location-map-container p,
+.location-map-container i {
+    /* Gold color for all text elements */
+    color: gold;
+}
+
+/* Map Container Styling */
+.map-container {
+    /* Fixed height for map area */
+    height: 300px;
+    /* Rounded corners */
+    border-radius: 0.25rem;
+    /* Hide overflow for clean edges */
+    overflow: hidden;
+    /* No internal padding */
+    padding: 0px;
+}
+
+/* Map Container Iframe */
+.map-container iframe {
+    /* Full width and height */
+    width: 100%;
+    height: 100%;
+    /* Remove default border */
+    border: 0;
+}
