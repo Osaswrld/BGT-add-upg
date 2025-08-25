@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Character encoding for proper text display -->
+    <meta charset="UTF-8">
+    <!-- Viewport meta tag for responsive design on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page title that appears in browser tab -->
+    <title>Contact Form</title>
+
+    <!-- External CSS frameworks and libraries -->
+    <!-- Bootstrap 5.3.0 for responsive layout and components -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome 6.4.0 for icons throughout the form -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS file for additional styling -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header section with background image and navigation breadcrumb -->
+    <header class="header">
+        <!-- Breadcrumb navigation showing current page location -->
+        <h5><a href="#">Home</a> → Contacts</h5>
+    </header>
+
+    <!-- Main contact section containing the form and contact information -->
+    <section class="contact-section">
+        <div class="container">
+            <!-- Introduction text section -->
+            <div class="intro-text">
+                <h2>Get In Touch</h2>
+                <p>Please fill out the contact form below, and we will get back to you as soon as possible. We look forward to connecting with you!</p>
+            </div>
+
+            <!-- Bootstrap grid system for responsive layout -->
+            <div class="row g-4">
+                <!-- Contact Form Column (8/12 width on large screens) -->
+                <div class="col-lg-8">
+                    <div class="form-container">
+                        <!-- Success message that appears after successful form submission -->
+                        <!-- Initially hidden with display: none inline style -->
+                        <div id="successMessage" class="form-success" style="display: none;">
+                            <i class="fas fa-check-circle me-2"></i>
+                            Thank you for your message! We will get back to you soon.
+                        </div>
+
+                        <!-- Main contact form with novalidate to handle custom validation -->
+                        <form id="contactForm" novalidate>
+                            <!-- Bootstrap grid for form fields -->
+                            <div class="row g-3">
+                                <!-- Full Name Field (required) -->
+                                <div class="col-12">
+                                    <label for="fullName" class="form-label">Full Name *</label>
+                                    <input type="text" class="form-control" id="fullName"
+                                           placeholder="Enter Your Full Name"
+                                           required aria-required="true">
+                                    <!-- Bootstrap validation feedback message -->
+                                    <div class="invalid-feedback">Please enter your full name.</div>
+                                </div>
+
+                                <!-- Email Field (required, half width on medium+ screens) -->
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">Email *</label>
+                                    <input type="email" class="form-control" id="email"
+                                           placeholder="Enter Valid Email"
+                                           required aria-required="true">
+                                    <div class="invalid-feedback">Please enter a valid email address.</div>
+                                </div>
+
+                                <!-- Phone Number Field (required, half width on medium+ screens) -->
+                                <div class="col-md-6">
+                                    <label for="phone" class="form-label">Phone Number *</label>
+                                    <input type="tel" class="form-control" id="phone"
+                                           placeholder="Enter Phone Number"
+                                           required aria-required="true">
+                                    <div class="invalid-feedback">Please enter a valid phone number.</div>
+                                </div>
+
+                                <!-- Company Name Field (optional) -->
+                                <div class="col-12">
+                                    <label for="company" class="form-label">Company Name</label>
+                                    <input type="text" class="form-control" id="company"
+                                           placeholder="Enter Company's Name">
+                                </div>
+
+                                <!-- Job Title Field (optional, half width on medium+ screens) -->
+                                <div class="col-md-6">
+                                    <label for="jobTitle" class="form-label">Job Title</label>
+                                    <input type="text" class="form-control" id="jobTitle"
+                                           placeholder="Enter Job Title">
+                                </div>
+
+                                <!-- Service Interest Dropdown (optional, half width on medium+ screens) -->
+                                <div class="col-md-6">
+                                    <label for="service" class="form-label">Interested Service</label>
+                                    <select class="form-select" id="service">
+                                        <!-- Default disabled option to encourage selection -->
+                                        <option value="" disabled selected>Select a service</option>
+                                        <!-- Service options matching company offerings -->
+                                        <option value="production">Production Enhancement Services</option>
+                                        <option value="consulting">Technical Consulting</option>
+                                        <option value="equipment">Equipment Solutions</option>
+                                        <option value="training">Training Services</option>
+                                        <option value="other">Other Services</option>
+                                    </select>
+                                </div>
+
+                                <!-- Source Tracking Dropdown (optional, half width on medium+ screens) -->
+                                <div class="col-md-6">
+                                    <label for="source" class="form-label">How did you find us?</label>
+                                    <select class="form-select" id="source">
+                                        <option value="" disabled selected>Select an option</option>
+                                        <!-- Common referral sources for analytics -->
+                                        <option value="google">Google Search</option>
+                                        <option value="social">Social Media</option>
+                                        <option value="referral">Referral</option>
+                                        <option value="website">Website</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+
+                                <!-- Additional field for "Other" source specification -->
+                                <div class="col-md-6">
+                                    <label for="sourceOther" class="form-label">Specify if other</label>
+                                    <input type="text" class="form-control" id="sourceOther"
+                                           placeholder="Specify if other">
+                                </div>
+
+                                <!-- Message Textarea (required with character limit) -->
+                                <div class="col-12">
+                                    <label for="message" class="form-label">Message *</label>
+                                    <textarea class="form-control" id="message" rows="5"
+                                              placeholder="Write Message Here..."
+                                              maxlength="300" required aria-required="true"></textarea>
+                                    <!-- Character counter and requirements display -->
+                                    <div class="form-text">
+                                        <i class="fas fa-info-circle"></i>
+                                        <span id="charCount">0</span>/300 characters (80–300 required)
+                                    </div>
+                                    <div class="invalid-feedback">Please enter a message between 80 and 300 characters.</div>
+                                </div>
+
+                                <!-- Submit Button -->
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fas fa-paper-plane me-2"></i>Send Message
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Contact Information Column (4/12 width on large screens) -->
+                <div class="col-lg-4">
+                    <div class="contact-info-container">
+                        <div class="contact-info">
+                            <!-- Phone Contact Information -->
+                            <h4>Phone</h4>
+                            <div class="contact-detail">
+                                <!-- Clickable phone link with tel: protocol -->
+                                <p><i class="fas fa-phone me-2"></i>
+                                   <a href="tel:+2348031234567" style="color: inherit; text-decoration: none;">
+                                       +234 803 123 4567
+                                   </a></p>
+                            </div>
+
+                            <!-- Email Contact Information -->
+                            <h4>Email</h4>
+                            <div class="contact-detail">
+                                <!-- Clickable email link with mailto: protocol -->
+                                <p><i class="fas fa-envelope me-2"></i>
+                                   <a href="mailto:bgtsales@bgtechnical.com" style="color: inherit; text-decoration: none;">
+                                       bgtsales@bgtechnical.com
+                                   </a></p>
+                            </div>
+
+                            <!-- Physical Address Information -->
+                            <h4>Address</h4>
+                            <div class="contact-detail">
+                                <p><i class="fas fa-map-marker-alt me-2"></i>
+                                   149 Trans Amadi Ind.<br>Layout, Port Harcourt,<br>Rivers, Nigeria</p>
+                            </div>
+
+                            <!-- Social Media Links -->
+                            <h4>Follow Us</h4>
+                            <div class="social-links">
+                                <!-- Social media icons with aria-labels for accessibility -->
+                                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location and Map Section -->
+    <div class="location-map-container">
+        <div class="row g-3">
+            <!-- Location Information Column -->
+            <div class="col-md-6">
+                <!-- Section title with highlighted text -->
+                <p><strong class="highlight"><h1>Our Loc</strong>ations</h1></p>
+                <!-- Multiple office locations -->
+                <p><i class="fas fa-map-marker-alt me-2"></i>149 Trans Amadi Ind, Layout, Port Harcourt, Rivers, Nigeria</p>
+                <p><i class="fas fa-map-marker-alt me-2"></i>Femi Sule St, Victoria Island, Lagos 106104, Lagos, Nigeria</p>
+                <p><i class="fas fa-map-marker-alt me-2"></i>12808 W Airport Blvd # 250, Sugar Land, Texas 77478, USA</p>
+            </div>
+            <!-- Interactive Map Column -->
+            <div class="col-md-6">
+                <div class="map-container">
+                    <!-- Embedded Google Maps iframe showing business locations -->
+                    <iframe
+                        src="https://www.google.com/maps/d/u/0/embed?mid=1oBFGPw11eJ0PYGQM4YieIYo8MDLTKLA&ehbc=2E312F&noprof=1"
+                        width="640" height="480">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Libraries and Scripts -->
+    <!-- Bootstrap JavaScript bundle for interactive components -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript file for form functionality -->
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
