@@ -17,7 +17,7 @@ A responsive contact form webpage with real-time validation, dynamic feedback, a
 - Font Awesome icons
 - Bootstrap-compatible styling
 
-## 📸 images 
+## 📸 Images 
 
 <img width="1335" height="683" alt="Screenshot 2025-08-26 112642" src="https://github.com/user-attachments/assets/29a416ec-e13e-47e2-86d6-425e609140ff" />
 <img width="1348" height="355" alt="Screenshot 2025-08-26 112729" src="https://github.com/user-attachments/assets/34d1df65-1323-4ee1-92f6-b83846d13240" />
